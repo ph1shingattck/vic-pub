@@ -1,4 +1,4 @@
-extends: vic-secret
+extends: nonexistent-repo-abc123
 
 queue_rules:
   - name: default
