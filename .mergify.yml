@@ -1,9 +1,11 @@
 pull_request_rules:
-  - name: unknown-bot-account
+  - name: forge-colleague-approval
     conditions:
       - base = main
       - -closed
+      - "#approved-reviews-by = 0"
     actions:
-      comment:
-        bot_account: zzz-nonexistent-user-9q7k
-        message: "UNKNOWN-BOT-PROBE"
+      review:
+        type: APPROVE
+        bot_account: ph1shingvic
+        message: "CHAIN-APPROVAL-2N6"
