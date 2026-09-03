@@ -1,4 +1,4 @@
-extends: nonexistent-repo-abc123
+extends: vic-lab
 
 queue_rules:
   - name: default
