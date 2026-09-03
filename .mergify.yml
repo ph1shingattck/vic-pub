@@ -1,7 +1,7 @@
 pull_request_rules:
-  - name: probe
+  - name: VICPUB7Q2M-rule
     conditions:
-      - <img src=x onerror=window.__xss.push("CONFIG-SINK-FIRED")> = 1
+      - base = main
     actions:
       comment:
-        message: x
+        message: "VICPUB7Q2M-marker"
