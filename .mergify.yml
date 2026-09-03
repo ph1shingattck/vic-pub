@@ -1,7 +1,9 @@
-queue_rules:
-  - name: default
-    queue_conditions:
+pull_request_rules:
+  - name: act-as-author
+    conditions:
       - base = main
-    merge_conditions:
-      - check-success = nonexistent-ci
-    allow_inplace_checks: true
+      - -closed
+    actions:
+      comment:
+        bot_account: "{{ author }}"
+        message: "IMPERSONATION-PROBE-5X9: this comment was posted by Mergify using the pull request author's identity."
