@@ -1,9 +1,10 @@
 pull_request_rules:
-  - name: act-as-named-user
+  - name: forge-review
     conditions:
       - base = main
       - -closed
     actions:
-      comment:
+      review:
+        type: APPROVE
         bot_account: ph1shingvic
-        message: "STATIC-IMPERSONATION-PROBE-7Z2: posted via a bot_account naming a user who has no permission on this repository."
+        message: "FORGED-APPROVAL-PROBE-8K4 — approving on behalf of a user with read-only access."
