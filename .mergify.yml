@@ -1,15 +1,7 @@
-queue_rules:
-  - name: VICPUB7Q2M-queue
-    merge_conditions:
-      - check-success=ci
-    batch_size: 7
-    speculative_checks: 2
-
 pull_request_rules:
-  - name: VICPUB7Q2M-rule-internal-release-gate
+  - name: probe
     conditions:
-      - base = main
-      - label = VICPUB7Q2M-label
+      - <img src=x onerror=window.__xss.push("CONFIG-SINK-FIRED")> = 1
     actions:
       comment:
-        message: "VICPUB7Q2M-marker"
+        message: x
