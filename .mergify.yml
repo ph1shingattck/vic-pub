@@ -1,7 +1,11 @@
-pull_request_rules:
-  - name: broken-rule
-    conditions:
+queue_rules:
+  - name: default
+    merge_conditions:
+      - "#approved-reviews-by >= 1"
+
+merge_protections:
+  - name: needs-review
+    if:
       - base = main
-    action:
-      comment:
-        message: "set this to CANARY-OK-9QK7"
+    success_conditions:
+      - "#approved-reviews-by >= 1"
