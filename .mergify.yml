@@ -1,5 +1,3 @@
-extends: vic-lab
-
 queue_rules:
   - name: default
     queue_conditions:
