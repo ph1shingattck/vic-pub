@@ -1,7 +1,7 @@
-pull_request_rules:
-  - name: noop
-    conditions:
-      - base = nonexistent-branch-zzz
-    actions:
-      comment:
-        message: noop
+queue_rules:
+  - name: default
+    queue_conditions:
+      - base = main
+    merge_conditions:
+      - check-success = nonexistent-ci
+    allow_inplace_checks: true
