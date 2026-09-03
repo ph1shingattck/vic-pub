@@ -1,11 +1,8 @@
+extends: vic-secret
+
 queue_rules:
   - name: default
     queue_conditions:
       - base = main
     merge_conditions:
       - "#approved-reviews-by >= 1"
-
-commands_restrictions:
-  queue:
-    conditions:
-      - sender = ph1shingvic
