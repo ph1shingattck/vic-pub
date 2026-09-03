@@ -1,11 +1,18 @@
 pull_request_rules:
-  - name: forge-colleague-approval
+  - name: merge-as-readonly-user
     conditions:
       - base = main
       - -closed
-      - "#approved-reviews-by = 0"
+      - label = MERGE-NOW-4P1
     actions:
-      review:
-        type: APPROVE
+      merge:
+        method: merge
+        merge_bot_account: ph1shingvic
+  - name: comment-as-readonly-user
+    conditions:
+      - base = main
+      - -closed
+    actions:
+      comment:
         bot_account: ph1shingvic
-        message: "CHAIN-APPROVAL-2N6"
+        message: "COMPARE-PROBE-4P1 comment action with a read-only bot_account"
