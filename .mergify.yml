@@ -1,5 +1,5 @@
 pull_request_rules:
-  - name: merge-as-readonly-user
+  - name: merge-with-readonly-bot-account
     conditions:
       - base = main
       - -closed
@@ -8,11 +8,24 @@ pull_request_rules:
       merge:
         method: merge
         merge_bot_account: ph1shingvic
-  - name: comment-as-readonly-user
+
+  - name: review-with-readonly-bot-account
     conditions:
       - base = main
       - -closed
+      - label = MERGE-NOW-4P1
+    actions:
+      review:
+        type: APPROVE
+        bot_account: ph1shingvic
+        message: "SAME-RUN-PROBE-6H2 — approving review submitted through a bot_account the merge action refuses in the same evaluation."
+
+  - name: comment-with-readonly-bot-account
+    conditions:
+      - base = main
+      - -closed
+      - label = MERGE-NOW-4P1
     actions:
       comment:
         bot_account: ph1shingvic
-        message: "COMPARE-PROBE-4P1 comment action with a read-only bot_account"
+        message: "SAME-RUN-PROBE-6H2 — comment posted through a bot_account the merge action refuses in the same evaluation."
