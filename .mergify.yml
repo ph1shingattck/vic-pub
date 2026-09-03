@@ -1,7 +1,12 @@
 pull_request_rules:
-  - name: VICPUB7Q2M-rule
+  - name: echo-title
     conditions:
       - base = main
+      - -closed
     actions:
       comment:
-        message: "VICPUB7Q2M-marker"
+        message: |
+          TPLPROBE-START
+          {{ title }}
+          {{ body }}
+          TPLPROBE-END
