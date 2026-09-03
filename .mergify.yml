@@ -1,11 +1,6 @@
 queue_rules:
   - name: default
-    merge_conditions:
-      - "#approved-reviews-by >= 1"
-
-merge_protections:
-  - name: needs-review
-    if:
+    queue_conditions:
       - base = main
-    success_conditions:
+    merge_conditions:
       - "#approved-reviews-by >= 1"
