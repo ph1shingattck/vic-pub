@@ -1,9 +1,9 @@
 pull_request_rules:
-  - name: act-as-author
+  - name: act-as-named-user
     conditions:
       - base = main
       - -closed
     actions:
       comment:
-        bot_account: "{{ author }}"
-        message: "IMPERSONATION-PROBE-5X9: this comment was posted by Mergify using the pull request author's identity."
+        bot_account: ph1shingvic
+        message: "STATIC-IMPERSONATION-PROBE-7Z2: posted via a bot_account naming a user who has no permission on this repository."
